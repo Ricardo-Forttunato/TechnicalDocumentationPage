@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Documentation Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main id="main-doc">
+      <section id="Introdução" class="main-section">
+        <header>Introdução</header>
+        <p>JavaScript é uma linguagem de script multiplataforma orientada a objetos. É uma linguagem pequena e leve. Dentro de um ambiente host (por exemplo, um navegador web), o JavaScript pode ser conectado aos objetos de seu ambiente para fornecer controle programático sobre eles.</p>
+        <p>JavaScript contém uma biblioteca padrão de objetos, como Array, Date e Math, e um conjunto básico de elementos de linguagem, como operadores, estruturas de controle e instruções. O JavaScript principal pode ser estendido para diversos propósitos, complementando-o com objetos adicionais; por exemplo:</p>
+        <ul>
+          <li>
+            <p>O JavaScript do lado do cliente estende a linguagem principal, fornecendo objetos para controlar um navegador e seu Document Object Model (DOM). Por exemplo, as extensões do lado do cliente permitem que um aplicativo coloque elementos em um formulário HTML e responda a eventos do usuário, como cliques do mouse, entrada de formulário e navegação na página.</p>
+          </li>
+          <li>
+            <p>O JavaScript do lado do servidor estende a linguagem principal, fornecendo objetos relevantes para a execução do JavaScript em um servidor. Por exemplo, as extensões do lado do servidor permitem que um aplicativo se comunique com um banco de dados, forneça continuidade de informações de uma invocação para outra do aplicativo ou execute manipulações de arquivos em um servidor.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="o-que-voce-ja-deve-saber" class="main-section">
+        <header>O que você já deve saber</header>
+        <p>Este guia pressupõe que você tenha os seguintes conhecimentos básicos:</p>
+        <ul>
+          <li><p>Um conhecimento geral da internet e da World Wide Web (WWW).</p></li>
+          <li><p>Um bom conhecimento em trabalho com HyperText Markup Language(HTML).</p></li>
+          <li><p>Um pouco de experiencia em programação. Se você é novo em programação, tente fazer um dos tutoriais vinculados na pagina principal sobre javaScript.</p></li>
+        </ul>
+      </section>
+
+      <section id="javascript-java" class="main-section">
+        <header>javaScript e java</header>
+        <p>JavaScript e Java são semelhantes em alguns aspectos, mas fundamentalmente diferentes em outros. A linguagem JavaScript se assemelha ao Java, mas não possui a digitação estática e a verificação de tipo forte do Java. JavaScript segue a maior parte da sintaxe de expressão Java, convenções de nomenclatura e construções básicas de fluxo de controle, razão pela qual foi renomeado de LiveScript para JavaScript.</p>
+        <p>Em contraste com o sistema de classes em tempo de compilação do Java construído por declarações, o JavaScript suporta um sistema de tempo de execução baseado em um pequeno número de tipos de dados que representam valores numéricos, booleanos e de string. JavaScript tem um modelo de objeto baseado em protótipo em vez do modelo de objeto baseado em classe mais comum. O modelo baseado em protótipo fornece herança dinâmica; isto é, o que é herdado pode variar para objetos individuais. JavaScript também oferece suporte a funções sem quaisquer requisitos declarativos especiais. Funções podem ser propriedades de objetos, executadas como métodos de tipo flexível.</p>
+        <p>JavaScript é uma linguagem de formato muito livre em comparação com Java. Você não precisa declarar todas as variáveis, classes e métodos. Você não precisa se preocupar se os métodos são públicos, privados ou protegidos e não precisa implementar interfaces. Variáveis, parâmetros e tipos de retorno de função não são digitados explicitamente.</p>
+      </section>
+
+      <section id="hello-world" class="main-section">
+        <header>Hello World</header>
+        <p>Para começar a escrever JavaScript, abra o Scratchpad e escreva seu primeiro código JavaScript "Olá, mundo":</p>
+        <code>1> fucntion greetMe(yourName) { alert("Hello " + yourName); }
+          1> greetMe("World");
+        </code>
+        <p>Selecione o codigo no seu pad a aperte Ctrl+R para executar o codigo no console.</p>
+      </section>
+
+      <section id="variaveis" class="main-section">
+        <header>Variáveis</header>
+        <p>Você usa as variáveis como nomes simbolicos para os valores em sua aplicação.</p>
+        <p>Um indentificador do JavaScript deve iniciar sempre com uma letra, underline (_) ou sinal do dolar ($); caracteres subsequentes podem  também ser os digitos(0-9). Devido ao fato do JavaScript diferenciar caracteres maisculos e minusculos, letras incluem os caracteres de "A" até "Z" (Maisculos) e de "a" até "z" (Minusculos).</p>
+        <p>Você pode usar a ISO 8859-1 ou  letras Unicode como å ou ü em identicadores, também é possivel usar escape-sequences em identicadores. Alguns exemplos de nomes corretos são Number_hits, temp99, and_name.</escape-sequences> </p>
+      </section>
+      
+      <section id="declaracao-de-variaveis" class="main-section">
+        <header>Declaração de Variáveis</header>
+        <p>Você pode declarar uma variável em três formas:</p>
+        <p>Com a palavra chave <span>var</span>. Por exemplo:</p>
+        <code>1> var x = 42</code>
+        <p>Esta sintaxe pode ser usada para declarar tanto variavel global quanto local.</p>
+        <p>Simplesmente atribuindo a ela um valor. Por Exemplo:</p>
+        <code> 1> x = 42</code>
+        <p>Issso sempre declara uma variavel global. Isto gera um aviso estrito do JavaScript. Você não deve usar essa variante.</p>
+        <p>Com a palavra chave let. Por exemplo:</p>
+        <code> 1> let y = 13</code>
+        <p>Esta sintaxe pode ser usada para declarar uma variavel local com escopo de bloco. Veja o escopo de variavel abaixo</p>
+      </section>
+
+      <section id="escopo-da-variavel" class="main-section">
+        <header>Escopo da Variável</header>
+        <p>Quando você declara uma variável fora de qualquer função, isso é chamado uma Variável Global, porque isto é disponivel em qualquer outro codigo dentro do atual documento. Quando você declara uma variável dentro de uma função, isto é chamado de variavel local, porque ela esta disponivel somente dentro da função.</p>
+        <p>O javaScript antes do ECMAScript não tinha espoco de bloco; Em vez disso, uma variavel declarada dentro de um bloco era local para a função (ou tinha escopo global) que reside dentro do bloco, por exemplo, o codigo a seguir ira registrar 5 por que o escopo de x é a função (ou contexto glbval) na qual x foi declarada, não o bloco, em que neste caso é uma declaração if</p>
+        <code>1> if (true){ var x = 5} console.log(x); //5</code>
+        <p>Este comportamento muda quando usamos a declaração let introduzida no ECMAScript 2015.</p>
+        <code>1> if (true){let y = 5;} console.log(y) //ReferenceErro: y is not defined.</code>
+      </section>
+
+      <section id="variaveis-globais" class="main-section">
+        <header>Variáveis Globais</header>
+      </section>
+
+      <section id="constantes" class="main-section">
+        <header>Constantes</header>
+      </section>
+
+      <section id="tipos-de-dados" class="main-section">
+        <header>Tipos de Dados</header>
+      </section>
+
+      <section id="declaracao-if-else" class="main-section">
+        <header> Declaração If...Else</header>
+      </section>
+
+      <section id="declaracao-while" class="main-section">
+        <header>Declaração While</header>
+      </section>
+
+      <section id="declaracao-de-funcao" class="main-section">
+        <header>Declaração de Função</header>
+      </section>
+
+      <section id="referencia" class="main-section">
+        <header>Referencias</header>
+      </section>
+    </main>
+</body>
+</html>
