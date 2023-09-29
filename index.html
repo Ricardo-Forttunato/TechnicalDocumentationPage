@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <nav id="navbar"></nav>
     <main id="main-doc">
       <section id="Introdução" class="main-section">
         <header>Introdução</header>
@@ -80,30 +81,112 @@
 
       <section id="variaveis-globais" class="main-section">
         <header>Variáveis Globais</header>
+        Variaveis Globais são de fato propriedades do objeto global. Em páginas web o objeto global é a janela, então você pode definir e acessar variaveis globais usando a janela.variável sintaxe.</p>
+        <p>Consequentemente, você pode acessar as variáveis declaradas em uma janela ou quadro espcificando pelao nome da janela ou quadro. Por exemplo, se uma variavel chamada phoneNumber é declarada em um documento, você pode se referir a essa variavel a partir de um iframe como parent.phoneNUmber.  </p>
       </section>
 
       <section id="constantes" class="main-section">
         <header>Constantes</header>
+        <p>Você pode criar uma somente leitura, nomeada de constante com a palavra chave <code>const</code> A sintaxe de uma constante identificadora é a mesma de uma variavel indentificadora: esta precisa iniciar com uma letra, underline ou sinal de dolar e pode conter caracteres alfabeticos, numericos ou underlines</p>
+        <code>1> const PI = 3.14;</code>
+
+        Uma constante não pode alterar valores atraves atraves de atribuições ou ser redeclarada enquanto o script estiver em execução. Ela deve ser inicializada com um valor.</p>
+        A regra de escopo de uma constante é o mesms que aquelas para os escopo de bloco da variavel let. Se a palavra chave const é omitida, o indentificador é assumido para representar uma variavel. Você não pode declarar uma constante com o memso nome de uma função ou variavel no dentro do mesmoo escopo. Por exemplo:</p>
+        <code>//ISTO IRA CAUDAR UM ERRO fucntion f() {}; const f = 5; // ISTO TAMBÉM IRA CAUSAR UM ERRO  f() {const g = 5; var g; //statements }</code>
+        <p>No entanto, Atributos objetos não são protegidos, então a seguite declaração é executadasem problemas</p>
+        <code>const My_OBJECT = {"key": "value"}; My_OBJECT.key = "otherValue";</code>
       </section>
 
       <section id="tipos-de-dados" class="main-section">
         <header>Tipos de Dados</header>
+        <p>O padrão anterior ECMAScript define 7 tipos de dados:</p>
+        <ul>
+            <li> 6 dos tipos de dados são primitivos:
+              <ul>
+                <li>Boolean. Verdadeiro ou falso.</li>
+                <li>null. Um palavra chave especial que denota valor nulo. Porque o javaScript é case-sensitive, null não é o memso de Null, NULL ou qualquer outra variante.   </li>
+                <li>undefined. Uma propriedade de alto nivel cujo valor é indefinido.</li>
+                <li>Number. 42 ou 3.14159.</li>
+                <li>String. "Howdy"</li>
+                <li>Symbol (novo no ECMAScript 2015). Um tipo de dado cuja instancia são únicas e imutáveis.</li>
+              </ul>
+            </li>
+          <li>e Objeto</li>
+        </ul>
+        <p>Embora este tipos de dados sejam relativamente uma pequena quantidade, eles possibilitam a você realizar funções uteis em suas aplicações. Objetos e funções são outros elementos fundamentais desta linguagem. Você pode imaginar objetos como nomes de conteudo para os valores e funções como procediementos que suas aplicações podem realizar.</p>
       </section>
 
       <section id="declaracao-if-else" class="main-section">
         <header> Declaração If...Else</header>
+        <p>Use a Declaração <code>if</code> para executar declarações de verdadeiro e falso. Use a calusula opcional <code>else</code> para executar uam declaração se a condição for <code>false</code>. Uma declaraÇão <code>if</code> se parece como a seguri:</p>
+        <code>if (condition) {statement_1; } else{statemenet_2; }</code>
+        <p>Condition pode ser qualquer expressão que retorna um valor booleano. Veja <a id="src_nav" src="Tipos de Dados">Boolean</a> para mais informações. Se a Condição <code>if</code> for <code>true</code> statement_1 é executado, se <code>if</code> for <code>false</code>, statemenet_2 que será executado. statement_1 e statemenet_2 podem ser qualquer declaração, incluindo declarações <code>if</code> aninhadas.</p>
+        <p>Você também pode compor declarações usando <code>else</code> se houver multiplas Condições testadas em sequencia, como a seguir:</p>
+        <code>
+          if (condition_1){statement_1; } else if (condition_2){
+          statemenet_2; } else if (condition_n){
+          statement_n; } else{statement_last; }
+        </code>
+        <p>No caso de multiplas Condições somente a primeira Condição lógica ira avaliar se a condição verdade será executada. Para executar multiplas declarações, agrupe-as dentro de uma declarção em bloco (<code>{...}</code>). Em geral, isto é boa prática sempre usar declarações em bloco, especialmente quando aninhar declarações <code>if</code:</p>
+        <code>
+          if (condition){statement_1_runs_if_condition_is_true;
+          statement_2_runs_if_condition_is_true; } else {
+          statement_3_runs_if_condition_is_false;
+          statement_4_runs_if_condition_is_false; }
+        </code>
+        <p>Aconselhamos não usar atribuições em uma expressão condicional, por que a atribuição pode ser confundidade com igualdade quando observamos o código. Por exemplo, não faça uso do codigo a seguir:</p>
+        <code>
+          if (x = y) {/* statemenet here */}
+        </code>
+        <p>Se você precisar usar uma atribuição em uma expressão condicional, uma pratica comum é colocar parenteses adicionais em torno da atribuição. Por exemplo:</p>
+        <code>
+          if ((x = y)) {/* statemenet here */}
+        </code>
+        <p>Se você não estiver familiarizado com o operador condicional, você pode ler a documentação oficial sobre o operador condicional primeiro.</p>
       </section>
 
       <section id="declaracao-while" class="main-section">
         <header>Declaração While</header>
+        <p>Uma declaração <code>while</code> executa suas declarações enquanto uma condição especificada avalia como verdadeira. Uma declaração <code>while</code> se parece com a seguinte:</p>
+        <code>
+          while (condition) statement
+        </code>
+        <p>Se a condição se tornar verdadeira, a declaração dentro do laço para a execução e o controle para a proxima execução no laço. Se a Condição retornar <code>false</code>, a execução para e passa o controle para a proxima declaraçao do laço <code>while</code>.</p>
+        <p>Para executar multiplas declarações, use uma declaração em bloco (<code>{...}</code>) para agrupar estas declarações.</p>
+        <p>Example:</p>
+        <p>O seguinte laço while itera equanto o n for menor que três:</p>
+        <code>
+          var n = 0; var x = 0; while (n < 3){n++; x += n; }
+        </code>
+        <p>Com cada iteração, o laço incrementa <code>n</code> e adiciona esse valor a <code>x</code>. Portanto, <code>x</code> e <code>n</code> recebem os seguintes valores.</p>
+        <ul>
+          <li>Após a primeira passagem: n = 1 e x = 1</li>
+          <li>Após a segunda passagem: n = 2 e x = 3</li>
+          <li>Após a terceira passagen: n = 3 e x = 6</li>
+        </ul>
+        <p>Após completar a terceira passagem, a condição n < 3 deixa de ser verdadeira, então o laço é encerrado.</p>
       </section>
 
       <section id="declaracao-de-funcao" class="main-section">
         <header>Declaração de Função</header>
+        <p>Uma definição de função (declarae uma função ou declaração de funções) consiste da palavra chave <code>function</code>, seguida por:</p>
+        <ul>
+          <li>O nome da função.</li>
+          <li>Uma lista de argumentos para a função, entre parenteses e separados por virgulas.</li>
+          <li>As declarações JavaScript que definem a função, entre chaves <code>{...}</code>.</li>
+        </ul>
+        <p>Por exemplo, o código a seguir defien uma função simples chamada square:</p>
+        <code>
+          function square(number) { return number * number; }
+        </code>
+        <p>A função <code>square</code> recebe um argumento, chamado <code>number</code>. A função consiste de uma instrução que indica para retornar o argumento da função (isto é, <code>number</code>) multiplicado por si mesmo. A instrução <code>return</code> especifica o valor retornado pela função.</p>
+        <code>return number * number;</code>
+        <p>Parametros primitivos (tal como number) são passados para a função pelo valor; o valor é passado para a função, mas se a Funçãoalterar o valor dos parametros, esta mudança não é refletida globalmente ou na chamada da função.</p>
       </section>
 
       <section id="referencia" class="main-section">
         <header>Referencias</header>
+        <p>Toda documentação descrita nesat pagina foi retirada de <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN</a></p>
       </section>
     </main>
 </body>
